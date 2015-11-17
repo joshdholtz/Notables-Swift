@@ -22,11 +22,13 @@ Protocol extensions for common NSNotifications for the lazy (me)
   - animationDuration
   - frameEnd
   - frameBegin
+  - `animate` with the keyboard animation curves 
 
 ## Quick Usage
 
 ```swift
 class ViewController: UIViewController {
+	@IBOutlet weak var bottomConstraint: NSLayoutConstraint!
 	override func viewWillAppear(animated: Bool) {
 		super.viewWillAppear(animated)
 		note_registerForAppEvents()
@@ -57,10 +59,20 @@ extension ViewController: AppNotable {
 extension ViewController: KeyboardNotable {
 	func note_keyboardWillShow(info: KeyboardNotableInfo) {
 		print("Called \(__FUNCTION__)")
+		
+		bottomConstraint.constant += info.frameEnd.height
+		info.animate(animations: { () -> Void in
+			self.btnSend.layoutIfNeeded()
+		}, completion: nil)
 	}
 	
 	func note_keyboardWillHide(info: KeyboardNotableInfo) {
 		print("Called \(__FUNCTION__)")
+		
+		bottomConstraint.constant -= info.frameEnd.height
+		info.animate(animations: { () -> Void in
+			self.btnSend.layoutIfNeeded()
+		}, completion: nil)
 	}
 	
 	func note_keyboardDidShow(info: KeyboardNotableInfo) {
