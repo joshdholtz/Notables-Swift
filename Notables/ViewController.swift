@@ -10,6 +10,9 @@ import UIKit
 
 class ViewController: UIViewController {
 	
+	@IBOutlet weak var btnSend: UIButton!
+	@IBOutlet weak var bottomConstraint: NSLayoutConstraint!
+	
 	override func viewWillAppear(animated: Bool) {
 		super.viewWillAppear(animated)
 		note_registerForAppEvents()
@@ -22,6 +25,9 @@ class ViewController: UIViewController {
 		super.viewWillDisappear(animated)
 	}
 
+	@IBAction func onClickSend(sender: AnyObject) {
+		view.endEditing(true)
+	}
 }
 
 extension ViewController: UITextFieldDelegate {
@@ -48,10 +54,20 @@ extension ViewController: AppNotable {
 extension ViewController: KeyboardNotable {
 	func note_keyboardWillShow(info: KeyboardNotableInfo) {
 		print("Called \(__FUNCTION__)")
+		
+		bottomConstraint.constant += info.frameEnd.height
+		info.animate(animations: { () -> Void in
+			self.btnSend.layoutIfNeeded()
+		}, completion: nil)
 	}
 	
 	func note_keyboardWillHide(info: KeyboardNotableInfo) {
 		print("Called \(__FUNCTION__)")
+		
+		bottomConstraint.constant -= info.frameEnd.height
+		info.animate(animations: { () -> Void in
+			self.btnSend.layoutIfNeeded()
+		}, completion: nil)
 	}
 	
 	func note_keyboardDidShow(info: KeyboardNotableInfo) {

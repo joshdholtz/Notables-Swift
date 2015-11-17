@@ -27,6 +27,15 @@ class KeyboardNotableInfo: NSObject {
 		frameEnd = (userInfo[UIKeyboardFrameEndUserInfoKey]! as! NSValue).CGRectValue()
 		frameBegin = (userInfo[UIKeyboardFrameBeginUserInfoKey]! as! NSValue).CGRectValue()
 	}
+	
+	func animate(delay: NSTimeInterval = 0, animations: (() -> Void), completion: ((Bool) -> Void)?) {
+		let curve = UIViewAnimationOptions(rawValue:UInt(animationCurve.rawValue << 16))
+		UIView.animateWithDuration(animationDuration,
+			delay: 0,
+			options: curve.union(.BeginFromCurrentState).union(.LayoutSubviews),
+			animations: animations,
+			completion: completion)
+	}
 }
 
 protocol KeyboardNotable: NSObjectProtocol {

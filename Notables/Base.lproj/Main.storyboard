@@ -29,14 +29,34 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="fuL-jI-mNh"/>
                                 </connections>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MJD-7I-4Eb">
+                                <rect key="frame" x="20" y="538" width="560" height="42"/>
+                                <color key="backgroundColor" red="1" green="0.09541603924" blue="0.1163857155" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="42" id="Git-BZ-a2v"/>
+                                </constraints>
+                                <state key="normal" title="Send">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onClickSend:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7X9-SF-KmQ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="MJD-7I-4Eb" secondAttribute="bottom" constant="20" id="Gaq-5j-x5Y"/>
                             <constraint firstItem="ccD-4w-liG" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="fXn-TH-K6M"/>
+                            <constraint firstItem="MJD-7I-4Eb" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="huy-av-v0a"/>
                             <constraint firstItem="ccD-4w-liG" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="87" id="kPG-cj-y4T"/>
                             <constraint firstItem="ccD-4w-liG" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="nnC-Ml-4ZQ"/>
+                            <constraint firstItem="MJD-7I-4Eb" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="xmN-SI-AoL"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="bottomConstraint" destination="Gaq-5j-x5Y" id="5vh-xG-oTC"/>
+                        <outlet property="btnSend" destination="MJD-7I-4Eb" id="bJw-Vy-HEe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
