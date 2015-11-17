@@ -19,6 +19,7 @@
 		03F0568F1BFBDBB600D95DFB /* NotablesFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = 03F0568E1BFBDBB600D95DFB /* NotablesFramework.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		03F056931BFBDBB600D95DFB /* Notables.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03F0568C1BFBDBB600D95DFB /* Notables.framework */; };
 		03F056941BFBDBB600D95DFB /* Notables.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 03F0568C1BFBDBB600D95DFB /* Notables.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		03F0569A1BFBE98900D95DFB /* Notables.h in Headers */ = {isa = PBXBuildFile; fileRef = 03F056991BFBE95500D95DFB /* Notables.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +79,7 @@
 		03F0568C1BFBDBB600D95DFB /* Notables.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Notables.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		03F0568E1BFBDBB600D95DFB /* NotablesFramework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotablesFramework.h; sourceTree = "<group>"; };
 		03F056901BFBDBB600D95DFB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		03F056991BFBE95500D95DFB /* Notables.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Notables.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +141,7 @@
 		037F86DC1BFB990F00F81739 /* Notables */ = {
 			isa = PBXGroup;
 			children = (
+				03F056991BFBE95500D95DFB /* Notables.h */,
 				037F86DD1BFB990F00F81739 /* AppDelegate.swift */,
 				037F86DF1BFB990F00F81739 /* ViewController.swift */,
 				037F86E11BFB990F00F81739 /* Main.storyboard */,
@@ -192,6 +195,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				03F0569A1BFBE98900D95DFB /* Notables.h in Headers */,
 				03F0568F1BFBDBB600D95DFB /* NotablesFramework.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
