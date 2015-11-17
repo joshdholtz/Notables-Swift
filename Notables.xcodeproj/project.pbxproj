@@ -16,6 +16,9 @@
 		037F86FE1BFB991000F81739 /* NotablesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037F86FD1BFB991000F81739 /* NotablesUITests.swift */; };
 		037F870D1BFB9A1700F81739 /* KeyboardNotable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037F870C1BFB9A1700F81739 /* KeyboardNotable.swift */; };
 		037F870F1BFB9C3600F81739 /* AppNotable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037F870E1BFB9C3600F81739 /* AppNotable.swift */; };
+		03F0568F1BFBDBB600D95DFB /* NotablesFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = 03F0568E1BFBDBB600D95DFB /* NotablesFramework.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		03F056931BFBDBB600D95DFB /* Notables.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03F0568C1BFBDBB600D95DFB /* Notables.framework */; };
+		03F056941BFBDBB600D95DFB /* Notables.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 03F0568C1BFBDBB600D95DFB /* Notables.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,7 +36,28 @@
 			remoteGlobalIDString = 037F86D91BFB990F00F81739;
 			remoteInfo = Notables;
 		};
+		03F056911BFBDBB600D95DFB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 037F86D21BFB990F00F81739 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 03F0568B1BFBDBB600D95DFB;
+			remoteInfo = NotablesFramework;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		03F056981BFBDBB700D95DFB /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				03F056941BFBDBB600D95DFB /* Notables.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		037F86DA1BFB990F00F81739 /* Notables.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Notables.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -51,6 +75,9 @@
 		037F86FF1BFB991000F81739 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		037F870C1BFB9A1700F81739 /* KeyboardNotable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardNotable.swift; sourceTree = "<group>"; };
 		037F870E1BFB9C3600F81739 /* AppNotable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppNotable.swift; sourceTree = "<group>"; };
+		03F0568C1BFBDBB600D95DFB /* Notables.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Notables.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		03F0568E1BFBDBB600D95DFB /* NotablesFramework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotablesFramework.h; sourceTree = "<group>"; };
+		03F056901BFBDBB600D95DFB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +85,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				03F056931BFBDBB600D95DFB /* Notables.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,6 +103,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		03F056881BFBDBB600D95DFB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -85,6 +120,7 @@
 				037F86DC1BFB990F00F81739 /* Notables */,
 				037F86F11BFB991000F81739 /* NotablesTests */,
 				037F86FC1BFB991000F81739 /* NotablesUITests */,
+				03F0568D1BFBDBB600D95DFB /* NotablesFramework */,
 				037F86DB1BFB990F00F81739 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -95,6 +131,7 @@
 				037F86DA1BFB990F00F81739 /* Notables.app */,
 				037F86EE1BFB991000F81739 /* NotablesTests.xctest */,
 				037F86F91BFB991000F81739 /* NotablesUITests.xctest */,
+				03F0568C1BFBDBB600D95DFB /* Notables.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -139,7 +176,27 @@
 			path = Classes;
 			sourceTree = "<group>";
 		};
+		03F0568D1BFBDBB600D95DFB /* NotablesFramework */ = {
+			isa = PBXGroup;
+			children = (
+				03F0568E1BFBDBB600D95DFB /* NotablesFramework.h */,
+				03F056901BFBDBB600D95DFB /* Info.plist */,
+			);
+			path = NotablesFramework;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		03F056891BFBDBB600D95DFB /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				03F0568F1BFBDBB600D95DFB /* NotablesFramework.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		037F86D91BFB990F00F81739 /* Notables */ = {
@@ -149,10 +206,12 @@
 				037F86D61BFB990F00F81739 /* Sources */,
 				037F86D71BFB990F00F81739 /* Frameworks */,
 				037F86D81BFB990F00F81739 /* Resources */,
+				03F056981BFBDBB700D95DFB /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				03F056921BFBDBB600D95DFB /* PBXTargetDependency */,
 			);
 			name = Notables;
 			productName = Notables;
@@ -195,6 +254,24 @@
 			productReference = 037F86F91BFB991000F81739 /* NotablesUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		03F0568B1BFBDBB600D95DFB /* NotablesFramework */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 03F056971BFBDBB700D95DFB /* Build configuration list for PBXNativeTarget "NotablesFramework" */;
+			buildPhases = (
+				03F056871BFBDBB600D95DFB /* Sources */,
+				03F056881BFBDBB600D95DFB /* Frameworks */,
+				03F056891BFBDBB600D95DFB /* Headers */,
+				03F0568A1BFBDBB600D95DFB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NotablesFramework;
+			productName = NotablesFramework;
+			productReference = 03F0568C1BFBDBB600D95DFB /* Notables.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -216,6 +293,9 @@
 						CreatedOnToolsVersion = 7.1.1;
 						TestTargetID = 037F86D91BFB990F00F81739;
 					};
+					03F0568B1BFBDBB600D95DFB = {
+						CreatedOnToolsVersion = 7.1.1;
+					};
 				};
 			};
 			buildConfigurationList = 037F86D51BFB990F00F81739 /* Build configuration list for PBXProject "Notables" */;
@@ -234,6 +314,7 @@
 				037F86D91BFB990F00F81739 /* Notables */,
 				037F86ED1BFB991000F81739 /* NotablesTests */,
 				037F86F81BFB991000F81739 /* NotablesUITests */,
+				03F0568B1BFBDBB600D95DFB /* NotablesFramework */,
 			);
 		};
 /* End PBXProject section */
@@ -257,6 +338,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		037F86F71BFB991000F81739 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		03F0568A1BFBDBB600D95DFB /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -293,6 +381,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		03F056871BFBDBB600D95DFB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -305,6 +400,11 @@
 			isa = PBXTargetDependency;
 			target = 037F86D91BFB990F00F81739 /* Notables */;
 			targetProxy = 037F86FA1BFB991000F81739 /* PBXContainerItemProxy */;
+		};
+		03F056921BFBDBB600D95DFB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 03F0568B1BFBDBB600D95DFB /* NotablesFramework */;
+			targetProxy = 03F056911BFBDBB600D95DFB /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -479,6 +579,46 @@
 			};
 			name = Release;
 		};
+		03F056951BFBDBB600D95DFB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = NotablesFramework/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.joshholtz.NotablesFramework;
+				PRODUCT_NAME = Notables;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		03F056961BFBDBB600D95DFB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = NotablesFramework/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.joshholtz.NotablesFramework;
+				PRODUCT_NAME = Notables;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -498,6 +638,7 @@
 				037F87041BFB991000F81739 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		037F87051BFB991000F81739 /* Build configuration list for PBXNativeTarget "NotablesTests" */ = {
 			isa = XCConfigurationList;
@@ -506,12 +647,22 @@
 				037F87071BFB991000F81739 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		037F87081BFB991000F81739 /* Build configuration list for PBXNativeTarget "NotablesUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				037F87091BFB991000F81739 /* Debug */,
 				037F870A1BFB991000F81739 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		03F056971BFBDBB700D95DFB /* Build configuration list for PBXNativeTarget "NotablesFramework" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				03F056951BFBDBB600D95DFB /* Debug */,
+				03F056961BFBDBB600D95DFB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
