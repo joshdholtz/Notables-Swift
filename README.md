@@ -1,28 +1,53 @@
 # Notables-Swift
 Protocol extensions for common NSNotifications for the lazy (me)
 
+[![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
+
 ## AppNotable
 - Listens for...
-  - UIApplicationDidEnterBackgroundNotification
-  - UIApplicationWillEnterForegroundNotification
-  - UIApplicationDidFinishLaunchingNotification
-  - UIApplicationDidBecomeActiveNotification
-  - UIApplicationWillResignActiveNotification
-  - UIApplicationDidReceiveMemoryWarningNotification
-  - UIApplicationWillTerminateNotification
+  - `UIApplicationDidEnterBackgroundNotification`
+  - `UIApplicationWillEnterForegroundNotification`
+  - `UIApplicationDidFinishLaunchingNotification`
+  - `UIApplicationDidBecomeActiveNotification`
+  - `UIApplicationWillResignActiveNotification`
+  - `UIApplicationDidReceiveMemoryWarningNotification`
+  - `UIApplicationWillTerminateNotification`
 
 ## KeyboardNotable
 - Listens for...
-  - UIKeyboardWillShowNotification
-  - UIKeyboardWillHideNotification
-  - UIKeyboardDidShowNotification
-  - UIKeyboardDidHideNotification
+  - `UIKeyboardWillShowNotification`
+  - `UIKeyboardWillHideNotification`
+  - `UIKeyboardDidShowNotification`
+  - `UIKeyboardDidHideNotification`
 - Passes back object with...
-  - animationCurve
-  - animationDuration
-  - frameEnd
-  - frameBegin
+  - `animationCurve`
+  - `animationDuration`
+  - `frameEnd`
+  - `frameBegin`
   - `animate` with the keyboard animation curves 
+
+### Carthage
+
+[Carthage](https://github.com/Carthage/Carthage) is a decentralized dependency manager that builds your dependencies and provides you with binary frameworks.
+
+You can install Carthage with [Homebrew](http://brew.sh/) using the following command:
+
+```bash
+$ brew update
+$ brew install carthage
+```
+
+To integrate Notables into your Xcode project using Carthage, specify it in your `Cartfile`:
+
+```ogdl
+github "joshdholtz/Notables-Swift" "master"
+```
+
+Run `carthage` to build the framework and drag the built `Notables.framework` into your Xcode project.
+
+### Manually
+
+If you prefer not to use either of the aforementioned dependency managers, you can integrate Notables into your project manually by copying and pasting all the files in the `Classes` directory.
 
 ## Quick Usage
 
