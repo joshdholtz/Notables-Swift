@@ -19,6 +19,7 @@ private let notificationNames = [
 ]
 
 protocol AppNotable: NSObjectProtocol {
+	
 	func note_appDidEnterBackground()
 	func note_appWillEnterForeground()
 	func note_appDidFinishLaunching()
@@ -28,19 +29,30 @@ protocol AppNotable: NSObjectProtocol {
 	func note_appWillTerminate()
 }
 
+private var AssociationKey: UInt8 = 1
 extension AppNotable where Self:UIViewController {
 	
+	private var appObservers: [AnyObject] {
+		get {
+			return objc_getAssociatedObject(self, &AssociationKey) as? [AnyObject] ?? []
+		}
+		set(newValue) {
+			objc_setAssociatedObject(self, &AssociationKey, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN)
+		}
+	}
+	
 	func note_registerForAppEvents() {
-		for notificationName in notificationNames {
-			NSNotificationCenter.defaultCenter().addObserverForName(notificationName, object: nil, queue: nil) { [weak self] notification in
+		note_unregisterForAppEvents()
+		appObservers = notificationNames.map { notificationName in
+			return NSNotificationCenter.defaultCenter().addObserverForName(notificationName, object: nil, queue: nil) { [weak self] notification in
 				self?.handleNotificationEvent(notification)
 			}
 		}
 	}
 	
 	func note_unregisterForAppEvents() {
-		for notificationName in notificationNames {
-			NSNotificationCenter.defaultCenter().removeObserver(self, name: notificationName, object: nil)
+		for observer in appObservers {
+			NSNotificationCenter.defaultCenter().removeObserver(observer)
 		}
 	}
 	

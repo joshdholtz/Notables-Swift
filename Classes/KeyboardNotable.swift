@@ -45,18 +45,30 @@ protocol KeyboardNotable: NSObjectProtocol {
 	func note_keyboardDidHide(info: KeyboardNotableInfo)
 }
 
+private var AssociationKey: UInt8 = 1
 extension KeyboardNotable where Self:UIViewController {
+	
+	private var appObservers: [AnyObject] {
+		get {
+			return objc_getAssociatedObject(self, &AssociationKey) as? [AnyObject] ?? []
+		}
+		set(newValue) {
+			objc_setAssociatedObject(self, &AssociationKey, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN)
+		}
+	}
+	
 	func note_registerForKeyboardEvents() {
-		for notificationName in notificationNames {
-			NSNotificationCenter.defaultCenter().addObserverForName(notificationName, object: nil, queue: nil) { [weak self] notification in
+		note_unregisterForKeyboardEvents()
+		appObservers = notificationNames.map { notificationName in
+			return NSNotificationCenter.defaultCenter().addObserverForName(notificationName, object: nil, queue: nil) { [weak self] notification in
 				self?.handleNotificationEvent(notification)
 			}
 		}
 	}
 	
 	func note_unregisterForKeyboardEvents() {
-		for notificationName in notificationNames {
-			NSNotificationCenter.defaultCenter().removeObserver(self, name: notificationName, object: nil)
+		for observer in appObservers {
+			NSNotificationCenter.defaultCenter().removeObserver(observer)
 		}
 	}
 

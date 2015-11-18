@@ -56,7 +56,7 @@ extension ViewController: KeyboardNotable {
 		print("Called \(__FUNCTION__)")
 		
 		bottomConstraint.constant += info.frameEnd.height
-		info.animate(animations: { () -> Void in
+		info.animate(animations: {[unowned self] () -> Void in
 			self.btnSend.layoutIfNeeded()
 		}, completion: nil)
 	}
@@ -65,7 +65,7 @@ extension ViewController: KeyboardNotable {
 		print("Called \(__FUNCTION__)")
 		
 		bottomConstraint.constant -= info.frameEnd.height
-		info.animate(animations: { () -> Void in
+		info.animate(animations: {[unowned self] () -> Void in
 			self.btnSend.layoutIfNeeded()
 		}, completion: nil)
 	}
