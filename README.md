@@ -109,3 +109,11 @@ extension ViewController: KeyboardNotable {
 	}
 }
 ```
+
+## Author
+
+Josh Holtz, me@joshholtz.com, [@joshdholtz](https://twitter.com/joshdholtz)
+
+## License
+
+`Notables` is available under the MIT license. See the LICENSE file for more info.
